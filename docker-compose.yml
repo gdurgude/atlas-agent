@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: mcp-postgres
+    environment:
+      POSTGRES_USER: mcpuser
+      POSTGRES_PASSWORD: mcppassword
+      POSTGRES_DB: mcpdb
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
